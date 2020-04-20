@@ -6,18 +6,21 @@ guessed_nums = []
 allowed_guesses = 0         
 difficulty = 0
 
-#Difficulty
+#Difficulty Selection
 while True:
     selection = input("Select EASY/MEDIUM/HARD: ")
     if selection == "EASY":
+        print("You have 6 guesses")
         allowed_guesses = 6
         difficulty = 10
         break
     if selection == "MEDIUM":
+        print("You have 4 guesses")
         allowed_guesses = 4
         difficulty = 20
     else:
         if selection == "HARD":
+            print("You have 3 guesses")
             allowed_guesses = 3
             difficulty = 50
     break
@@ -35,7 +38,7 @@ while len(guessed_nums) < allowed_guesses:
     except:
         print("That's not a whole number!")
         break
-#make sure this section updates based on difficulty selection.
+#mthis section updates based on difficulty selection.
     if not player_num > 0 or not player_num <= difficulty:
         print("Please guess a number between 1 and {}".format(difficulty))
         continue
